@@ -1,0 +1,80 @@
+soal 1 menbuat database
+create database my shop
+
+soal 2 membuat tabel di dalam database
+create tabel users (
+    id integer  auto_increment,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    primary key(id)
+
+);
+desc  catefories;
+create table categories(
+    id integer auto_increment,
+    name varchar (255),
+    primary key(id),
+
+);
+ desc items;
+ create table items(
+     id integer auto_increment,
+     name varchar(255),
+     description varchar(255),
+     price integer,
+     stock integer,
+     category_id integer,
+     primary key(id)
+     );
+
+soal 3 memasukan data  dari tabel
+
+
+insert into users(name,email,password)
+values("john doe, "johndoe.com","123");
+insert info users(name,email,password)
+values("jane doe",jane@doe.com,"456");
+select * from users;
+
+insert into categories(name)
+values ("gadget"),
+("cloth"),
+("men"),
+("women"),
+("branded");
+select * from catefories;
+
+
+
+insert  into items(name, description, price, stock, category_id)
+values ("sumsang b50", "hape karena dari merk samsung", 15000000,14,1),
+("uniklooh",baju karana dari brend benama",12000000, 5,2),
+("lmho watch", "jam tangan anak jujur bangat",300000,8,5);
+select * from items;
+
+
+
+soal 4 mengambil data dari database
+
+
+// mengambil data user //
+select * from user;
+select id,name,email from user;
+
+// mengambil data items //
+select * from items where price >1000000;
+select * from items whwre name like "%uniklooh%;
+
+// menapilkan data items join dengan kategori //
+select items.name,items.description,catefories_name as catefories_name
+from items
+join catefories on items.catefories_id = catefories.id
+
+
+soal 5 mengubah data dari database
+
+update `mysql`.`set1` `price`=` '2500000' where `name`=`samsung b50';
+select * from items;
+
+
